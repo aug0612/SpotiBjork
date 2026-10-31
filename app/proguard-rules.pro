@@ -1,2 +1,0 @@
--keepattributes *Annotation*, SourceFile, LineNumberTable
--keep class com.aug0612.spotibjork.** { *; }
