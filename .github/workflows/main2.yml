@@ -1,0 +1,35 @@
+name: Build Spotibjork
+
+# Compile l'APK sans aucun secret à configurer.
+# Lancer à la main : onglet Actions > "Build Spotibjork" > Run workflow.
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: 8.10.2
+
+      - name: Compiler l'APK
+        run: gradle --no-daemon assembleRelease
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Spotibjork-apk
+          path: app/build/outputs/apk/release/*.apk
+          retention-days: 30
