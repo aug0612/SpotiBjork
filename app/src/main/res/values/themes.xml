@@ -1,18 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- MATERIAL YOU THEME -->
     <style name="Theme.SpotiBjork" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Material You: Les couleurs seront remplacées dynamiquement -->
         <item name="colorPrimary">@color/apple_red</item>
         <item name="colorOnPrimary">@color/on_primary</item>
+        <item name="colorPrimaryContainer">#FFE5E5</item>
+        <item name="colorOnPrimaryContainer">@color/apple_red_dark</item>
+
         <item name="colorSecondary">@color/secondary</item>
+        <item name="colorOnSecondary">@color/on_primary</item>
+        <item name="colorSecondaryContainer">#FFF0EE</item>
+        <item name="colorOnSecondaryContainer">@color/secondary</item>
+
         <item name="android:colorBackground">@color/background</item>
         <item name="colorSurface">@color/surface</item>
         <item name="colorOnSurface">@color/on_surface</item>
+
+        <!-- Liquid Glass effects -->
         <item name="android:windowBlurBehindEnabled" tools:targetApi="s">true</item>
         <item name="android:windowBlurBehindRadius" tools:targetApi="s">20dp</item>
+
+        <!-- Transparent system bars -->
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
+
+        <!-- Edge-to-edge -->
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:fitsSystemWindows">false</item>
     </style>
 
 </resources>
